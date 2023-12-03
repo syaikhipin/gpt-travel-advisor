@@ -18,13 +18,13 @@ export default async function handler(
 ) {
   
   const { pointsOfInterestPrompt } = JSON.parse(req.body)
-  const response2 = await fetch('https://api.openai.com/v1/completions', {
+  const response2 = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      model: 'text-davinci-003',
+      model: 'undi95/toppy-m-7b',
       prompt: pointsOfInterestPrompt,
-      temperature: 0,
+      temperature: 0.7,
       max_tokens: 300
     })
   })

@@ -41,13 +41,13 @@ export default async function handler(
 
   let basePrompt = `what is an ideal itinerary for ${days} days in ${city}?`
   try {
-    const response = await fetch('https://api.openai.com/v1/completions', {
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        model: 'text-davinci-003',
+        model: 'undi95/toppy-m-7b',
         prompt: basePrompt,
-        temperature: 0,
+        temperature: 0.7,
         max_tokens: 550
       })
     })
