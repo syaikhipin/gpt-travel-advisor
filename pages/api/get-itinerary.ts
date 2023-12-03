@@ -47,7 +47,7 @@ export default async function handler(
       body: JSON.stringify({
         model: 'undi95/toppy-m-7b',
         prompt: basePrompt,
-        temperature: 0.7,
+        temperature: 0,
         max_tokens: 550
       })
     })
