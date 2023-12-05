@@ -18,11 +18,11 @@ export default async function handler(
 ) {
   
   const { pointsOfInterestPrompt } = JSON.parse(req.body)
-  const response2 = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+  const response2 = await fetch('https://api.chatanywhere.cn/v1/chat/completions', {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      model: 'undi95/toppy-m-7b',
+      model: 'gpt-3.5-turbo',
       prompt: pointsOfInterestPrompt,
       temperature: 0,
       max_tokens: 300

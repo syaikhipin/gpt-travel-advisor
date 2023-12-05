@@ -41,11 +41,11 @@ export default async function handler(
 
   let basePrompt = `what is an ideal itinerary for ${days} days in ${city}?`
   try {
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    const response = await fetch('https://api.chatanywhere.cn/v1/chat/completions', {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        model: 'undi95/toppy-m-7b',
+        model: 'gpt-3.5-turbo',
         prompt: basePrompt,
         temperature: 0,
         max_tokens: 550
